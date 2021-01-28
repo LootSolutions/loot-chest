@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Sign and Send</title>
+  </head>
+  <body>
+    <div id="content">
+      <div id="signing">Signing...</div>
+      <div id="buttons">
+        <div id="sign-button" class="button" onclick="signAndSend()">
+          Sign & Send
+        </div>
+        <div id="cancel-button" class="button" onclick="cancel()">Cancel</div>
+      </div>
+    </div>
+    <script>
+      const { remote } = require("electron");
+
+      const winId = remote.getCurrentWindow().id;
+
+      const signingDiv = document.getElementById("signing");
+      signingDiv.style.display = "none";
+
+      const buttonsDiv = document.getElementById("buttons");
+
+      function signAndSend() {
+        window.ipcRenderer.send("sign-and-send", winId);
+
+        signingDiv.style.display = "flex";
+        buttonsDiv.style.display = "none";
+      }
+
+      function cancel() {
+        console.log("test");
+        window.ipcRenderer.send("cancel", winId);
+      }
+    </script>
+  </body>
+</html>

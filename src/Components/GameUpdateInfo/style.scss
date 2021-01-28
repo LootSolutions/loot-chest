@@ -1,0 +1,43 @@
+.game-update-info {
+  display: flex;
+  flex-direction: column;
+
+  width: 192px;
+  height: 284px;
+
+  margin: 16px;
+
+  border-radius: 5px;
+
+  background-color: #d9e2ec;
+
+  // filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  color: #102a43;
+
+  .date-container {
+    width: 192px;
+    height: 28px;
+
+    border-radius: 5px 5px 0px 0px;
+
+    background-color: #4098d7;
+
+    font-family: "Lato";
+    font-size: 24px;
+    text-align: center;
+    line-height: 28px;
+
+    color: #f0f4f8;
+  }
+
+  > ul {
+    padding-left: 24px;
+
+    li {
+      line-height: 24px;
+    }
+  }
+}
