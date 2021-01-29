@@ -141,14 +141,14 @@ ipcMain.on("playGame", () => {
 });
 
 ipcMain.on("buy-asset", () => {
-  const tx = aurum.tx.aurumNft.mintNftToken(0, 0, 0);
+  const tx = aurum.tx.lootNft.mintNftToken(0, 0, 0);
 
   const winId = createSignWindow();
   pendingTxs.set(winId, new PendingTx(tx, null, null, null));
 });
 
 ipcMain.on("get-bought-asset", async (event, _args) => {
-  const numAssets = await aurum.query.aurumNft.purchases(0, userPair.address);
+  const numAssets = await aurum.query.lootNft.purchases(0, userPair.address);
 
   if (numAssets > 0) {
     event.reply("bought-asset");
