@@ -20,6 +20,14 @@ app.get("/user/identity", async (req, res) => {
   res.send({ display: username.Raw });
 });
 
+app.get("/user/assets", async (req, res) => {
+  const assets = await aurum.query.ormlNft.tokensByOwner.entries();
+
+  if (assets.length > 0) {
+    res.send({ assets: true });
+  }
+});
+
 function start(api, pair) {
   aurum = api;
   userPair = pair;

@@ -148,9 +148,9 @@ ipcMain.on("buy-asset", () => {
 });
 
 ipcMain.on("get-bought-asset", async (event, _args) => {
-  const numAssets = await aurum.query.lootNft.purchases(0, userPair.address);
+  const assets = await aurum.query.ormlNft.tokensByOwner.entries();
 
-  if (numAssets > 0) {
+  if (assets.length > 0) {
     event.reply("bought-asset");
   }
 });
