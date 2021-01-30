@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.scss";
 
-export default function Main() {
-  return <div className="carousel"></div>;
+export default function Main(props) {
+  const { src } = props;
+  return <img className="carousel" src={src} />;
 }

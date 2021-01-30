@@ -9,6 +9,7 @@ const pistolImg = require("../../assets/purchases/gold-pistol.png");
 const uziImg = require("../../assets/purchases/gold-uzi.png");
 const machineImg = require("../../assets/purchases/gold-machinegun.png");
 const rocketImg = require("../../assets/purchases/gold-rocket.png");
+const bannerSvg = require("../../assets/svg/banner.svg");
 
 const buyAsset = () => {
   window.ipcRenderer.send("buy-asset");
@@ -19,7 +20,6 @@ export default function Main() {
     <div id="marketplace">
       <div id="marketplace-container">
         <h1>Marketplace</h1>
-        <Carousel />
         <h2>Rock Paper Scissors</h2>
         <div className="assets">
           <PurchaseCard

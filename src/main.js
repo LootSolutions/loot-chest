@@ -2,6 +2,8 @@ const { app, BrowserWindow } = require("electron");
 const aurumTypes = require("./aurumTypes.json");
 const api = require("./api");
 const spawn = require("child_process").spawn;
+const exec = require("child_process").execFile;
+const path = require("path");
 const electron = require("electron");
 const { ApiPromise, WsProvider } = require("@polkadot/api");
 const { Keyring } = require("@polkadot/keyring");
@@ -132,7 +134,14 @@ ipcMain.on("selectDirectory", () => {
 });
 
 ipcMain.on("playGame", () => {
-  const gamePath = "/home/brettkolodny/Games/RockPaperScissors.x86_64";
+  let gamePath;
+
+  if (process.platform == "win32") {
+    gamePath = path.resolve(path.join("game", "RockPaperScissors.exe"));
+  } else if (process.platform == "linux") {
+    gamePath = path.resolve(path.join("game", "RockPaperScissors.x86_64"));
+  }
+
   const prc = spawn(gamePath);
 
   prc.on("close", (code) => {

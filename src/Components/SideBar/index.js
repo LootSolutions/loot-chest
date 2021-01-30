@@ -5,10 +5,7 @@ import SideBarButton from "../SideBarButton";
 import market from "../../assets/icons/market.svg";
 import user from "../../assets/icons/user.svg";
 import add from "../../assets/icons/add.svg";
-
-import Marketplace from "../../Views/Marketplace";
-import Game from "../../Views/Game";
-import Profile from "../../Views/Profile";
+import rpc from "../../assets/svg/rpc.svg";
 
 const openFolder = () => {
   window.ipcRenderer.send("selectDirectory");
@@ -23,7 +20,7 @@ export default function Main(props) {
         icon={market}
         onClick={() => setActiveWin(() => "marketplace")}
       />
-      <SideBarButton onClick={() => setActiveWin(() => "game")} />
+      <SideBarButton icon={rpc} onClick={() => setActiveWin(() => "game")} />
       <div id="end">
         <SideBarButton
           className="end"

@@ -17,7 +17,7 @@ app.get("/user/identity", async (req, res) => {
 
   const username = identity.toHuman() ? identity.toHuman().info.display : null;
 
-  res.send({ display: username.Raw });
+  res.send({ display: username ? username.Raw : null });
 });
 
 app.get("/user/assets", async (req, res) => {
@@ -25,6 +25,8 @@ app.get("/user/assets", async (req, res) => {
 
   if (assets.length > 0) {
     res.send({ assets: true });
+  } else {
+    res.send({ assets: false });
   }
 });
 
