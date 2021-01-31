@@ -2,7 +2,7 @@
   "name": "aurum_wallet",
   "version": "0.1.0",
   "main": "./src/main.js",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
     "sass": "^1.32.0"
