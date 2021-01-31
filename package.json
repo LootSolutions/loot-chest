@@ -1,5 +1,7 @@
 {
   "name": "aurum_wallet",
+  "author": "Loot Solutions",
+  "description": "A wallet for the Loot network",
   "version": "0.1.0",
   "main": "./src/main.js",
   "license": "MIT",
