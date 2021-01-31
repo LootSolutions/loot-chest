@@ -4,6 +4,12 @@
   "main": "./src/main.js",
   "license": "MIT",
   "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-deb": "^6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "electron": "^11.1.1",
     "parcel-bundler": "^1.12.4",
     "sass": "^1.32.0"
   },
@@ -11,7 +17,7 @@
     "@polkadot/api": "^3.3.1",
     "@polkadot/keyring": "^5.2.3",
     "@polkadot/react-identicon": "^0.65.1",
-    "electron": "^11.1.1",
+    "electron-squirrel-startup": "^1.0.0",
     "express": "^4.17.1",
     "react": "17.0.1",
     "react-dom": "^17.0.1",
@@ -19,6 +25,35 @@
   },
   "scripts": {
     "watch": "parcel watch src/Windows/App/index.html --public-url ./ --no-hmr",
-    "start": "electron ."
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "aurum_wallet"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
   }
 }
