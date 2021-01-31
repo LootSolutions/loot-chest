@@ -16,7 +16,7 @@
 ### Build
 1) `yarn make`
 
-# Running
+## Running
 1) Run the executable file in the `out` directory after building.
 
 ## License
