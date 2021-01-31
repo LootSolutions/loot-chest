@@ -9,8 +9,9 @@
 ---
 
 ## Development
-1) `yarn watch`
-2) `yarn start`
+1) `yarn`
+2) `yarn watch`
+3) `yarn start`
 
 ### Build
 1) `yarn make`
