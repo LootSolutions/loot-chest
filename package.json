@@ -4,7 +4,7 @@
   "description": "A wallet for the Loot network",
   "version": "0.1.0",
   "main": "./src/main.js",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.54",
     "@electron-forge/maker-deb": "^6.0.0-beta.54",
